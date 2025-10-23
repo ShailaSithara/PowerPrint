@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - PowerPrint</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="services.css">
-    <style>
-      
-        /* Hero Section */
-       
-        /* Story Section */
-        .story-section {
+</head>
+<style>
+         .story-section {
             padding: 100px 10%;
             background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
         }
+        @media (max-width: 900px) {
+    .story-wrapper {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 40px;
+    }
+
+    .story-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .story-content p {
+        font-size: 1rem;
+    }
+}
+
 
         .story-wrapper {
             max-width: 1400px;
@@ -55,7 +68,7 @@
             position: relative;
             border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
             transition: transform 0.5s ease;
         }
 
@@ -88,7 +101,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(175,203,31,0.1), transparent);
+            background: radial-gradient(circle, rgba(175, 203, 31, 0.1), transparent);
             border-radius: 50%;
             bottom: -250px;
             right: -100px;
@@ -115,10 +128,10 @@
         }
 
         .value-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 50px 40px;
             border-radius: 25px;
-            border: 2px solid rgba(175,203,31,0.2);
+            border: 2px solid rgba(175, 203, 31, 0.2);
             backdrop-filter: blur(10px);
             text-align: center;
             transition: all 0.4s ease;
@@ -133,7 +146,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(175,203,31,0.1), transparent);
+            background: linear-gradient(135deg, rgba(175, 203, 31, 0.1), transparent);
             opacity: 0;
             transition: opacity 0.4s;
         }
@@ -141,7 +154,7 @@
         .value-card:hover {
             transform: translateY(-10px);
             border-color: #AFCB1F;
-            background: rgba(175,203,31,0.1);
+            background: rgba(175, 203, 31, 0.1);
         }
 
         .value-card:hover::before {
@@ -158,7 +171,7 @@
             align-items: center;
             justify-content: center;
             font-size: 2.8rem;
-            box-shadow: 0 15px 40px rgba(175,203,31,0.4);
+            box-shadow: 0 15px 40px rgba(175, 203, 31, 0.4);
             transition: transform 0.4s ease;
             position: relative;
             z-index: 1;
@@ -178,190 +191,11 @@
         }
 
         .value-card p {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.8;
             font-size: 1.05rem;
             position: relative;
             z-index: 1;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: 100px 10%;
-            background: linear-gradient(135deg, #AFCB1F, #c1d64f);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-section::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: -200px;
-            right: -100px;
-        }
-
-        .stats-section::after {
-            content: '';
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            bottom: -150px;
-            left: -100px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 30px;
-            transition: transform 0.4s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 900;
-            color: #2B4336;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 1.3rem;
-            color: #2B4336;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 100px 10%;
-            background: #fff;
-        }
-
-        .team-section h2 {
-            text-align: center;
-            font-size: 3rem;
-            color: #2B4336;
-            margin-bottom: 4rem;
-            font-weight: 800;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .team-member {
-            text-align: center;
-            transition: transform 0.4s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
-
-        .member-image {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid #AFCB1F;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            position: relative;
-        }
-
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .team-member:hover .member-image img {
-            transform: scale(1.1);
-        }
-
-        .member-info h3 {
-            font-size: 1.6rem;
-            color: #2B4336;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .member-info p {
-            color: #AFCB1F;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 10%;
-            background: linear-gradient(135deg, #2B4336, #1a2920);
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(175,203,31,0.15), transparent);
-            border-radius: 50%;
-            top: -250px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: pulse 6s ease-in-out infinite;
-        }
-
-        .cta-section h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-section p {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
         }
 
         .btn {
@@ -379,76 +213,29 @@
         .btn-primary {
             background: linear-gradient(135deg, #AFCB1F, #c1d64f);
             color: #2B4336;
-            box-shadow: 0 12px 35px rgba(175,203,31,0.35);
+            box-shadow: 0 12px 35px rgba(175, 203, 31, 0.35);
         }
 
         .btn-primary:hover {
             transform: translateY(-5px);
-            box-shadow: 0 18px 45px rgba(175,203,31,0.45);
+            box-shadow: 0 18px 45px rgba(175, 203, 31, 0.45);
         }
 
         .btn-secondary {
             background: white;
             color: #2B4336;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
         }
 
         .btn-secondary:hover {
             background: #f8f9fa;
             transform: translateY(-5px);
         }
+</style>
 
-     
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .story-wrapper {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .about-hero h1 {
-                font-size: 3rem;
-            }
-
-            .story-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .about-hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .about-hero p {
-                font-size: 1.1rem;
-            }
-
-            .stat-number {
-                font-size: 3rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
 <body>
     <!-- Header -->
-    <header>
+<header>
         <nav>
             <div class="logo-container" onclick="window.location.href='index.html'">
                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2339 2560">
@@ -474,6 +261,7 @@
                         <li><a href="visit.html">Visit Cards</a></li>
                         <li><a href="paper.html">Paper Bags</a></li>
                         <li><a href="letter.html">Letter Head and Envelope</a></li>
+                        <li><a href="packaging.html">Packaging</a></li>
                     </ul>
                 </li>
                 <li><a href="About.html">About</a></li>
@@ -486,90 +274,67 @@
             </div>
         </nav>
     </header>
-    
 
     <!-- Hero Section -->
     <section class="about-hero">
         <h1>About <span class="highlight">PowerPrint</span></h1>
-        <p>Delivering exceptional printing services with precision, quality, and dedication. Your vision, our expertise, perfect results every time.</p>
+        <p>Delivering exceptional printing services with precision, quality, and dedication. Your vision, our
+                expertise, perfect results every time.</p>
     </section>
 
-    <!-- Story Section -->
-    <section class="story-section">
-        <div class="story-wrapper">
-            <div class="story-content">
-                <h2>Our Story</h2>
-                <p>Founded with a passion for perfection, PowerPrint has grown from a small printing shop to one of the most trusted names in professional printing services. Our journey began with a simple mission: to provide businesses and individuals with premium quality prints that exceed expectations.</p>
-                <p>Over the years, we've invested in state-of-the-art technology, built a team of skilled professionals, and developed processes that ensure consistent excellence. From pre-press to post-press, every step is handled with meticulous attention to detail.</p>
-                <p>Today, we proudly serve over 500 satisfied clients, delivering everything from business cards to large-format posters, all with the same commitment to quality that has defined us from day one.</p>
+      <!-- Story Section -->
+        <section class="story-section">
+            <div class="story-wrapper">
+                <div class="story-content">
+                    <h2>Our Story</h2>
+                    <p>Founded with a passion for perfection, PowerPrint has grown from a small printing shop to one of
+                        the most trusted names in professional printing services. Our journey began with a simple
+                        mission: to provide businesses and individuals with premium quality prints that exceed
+                        expectations.</p>
+                    <p>Over the years, we've invested in state-of-the-art technology, built a team of skilled
+                        professionals, and developed processes that ensure consistent excellence. From pre-press to
+                        post-press, every step is handled with meticulous attention to detail.</p>
+                    <p>Today, we proudly serve over 500 satisfied clients, delivering everything from business cards to
+                        large-format posters, all with the same commitment to quality that has defined us from day one.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <img src="images/press.jpg" alt="PowerPrint Story">
+                </div>
             </div>
-            <div class="story-image">
-                <img src="images/press.jpg" alt="PowerPrint Story">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Values Section -->
-    <section class="values-section">
-        <h2>Our Core Values</h2>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <h3>Quality First</h3>
-                <p>We never compromise on quality. Every print is a reflection of our commitment to excellence and attention to detail.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">⚡</div>
-                <h3>Speed & Efficiency</h3>
-                <p>Fast turnaround times without sacrificing quality. We understand deadlines matter to your business.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🤝</div>
-                <h3>Customer Focus</h3>
-                <p>Your satisfaction is our success. We work closely with you to bring your vision to life perfectly.</p>
-            </div>
-            <!-- <div class="value-card">
+        <!-- Values Section -->
+        <section class="values-section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Quality First</h3>
+                    <p>We never compromise on quality. Every print is a reflection of our commitment to excellence and
+                        attention to detail.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Speed & Efficiency</h3>
+                    <p>Fast turnaround times without sacrificing quality. We understand deadlines matter to your
+                        business.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Customer Focus</h3>
+                    <p>Your satisfaction is our success. We work closely with you to bring your vision to life
+                        perfectly.</p>
+                </div>
+                <!-- <div class="value-card">
                 <div class="value-icon">💡</div>
                 <h3>Innovation</h3>
                 <p>Staying ahead with the latest printing technology and techniques to deliver cutting-edge results.</p>
             </div> -->
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <!-- <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Happy Clients</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">10K+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">99%</div>
-                <div class="stat-label">Satisfaction Rate</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Support Available</div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- CTA Section -->
-    <!-- <section class="cta-section">
-        <h2>Ready to Print with Us?</h2>
-        <p>Experience the PowerPrint difference. Let's bring your ideas to life!</p>
-        <div class="cta-buttons">
-            <a href="Contactus.html" class="btn btn-primary">Get Started</a>
-            <a href="tel:+919020224457" class="btn btn-secondary">Call Now</a>
-        </div>
-    </section> -->
-
+        </section>
     <!-- Footer -->
-     <footer>
+      <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
@@ -633,185 +398,33 @@
             <p>&copy; 2025 PowerPrint. All rights reserved. | Professional Printing Services | Designed with ❤️ for Excellence</p>
         </div>
     </footer>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
 
-    <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // show/hide nav links
+    menuToggle.classList.toggle('active'); // animate toggle bars
+  });
+  const servicesItem = document.querySelector('.services-item');
+const dropdown = servicesItem.querySelector('.dropdown');
 
-        // Enhanced scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+servicesItem.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768) { // mobile only
+    e.preventDefault(); // prevent link navigation
+    e.stopPropagation(); // stop click from closing dropdown immediately
+    dropdown.classList.toggle('active');
+  }
+});
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+// Close dropdown if clicking outside
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && !servicesItem.contains(e.target)) {
+    dropdown.classList.remove('active');
+  }
+});
 
-        // Observe elements for animation
-        document.querySelectorAll('.value-card, .stat-item, .team-member, .story-content, .story-image').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            observer.observe(el);
-        });
-
-        // Add staggered animation delay
-        document.querySelectorAll('.value-card').forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.15}s`;
-        });
-
-        document.querySelectorAll('.stat-item').forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.15}s`;
-        });
-
-        // Animated counter for stats
-        const animateCounter = (element, target, duration = 2000) => {
-            let current = 0;
-            const increment = target / (duration / 16);
-            const isPercentage = target <= 100 && element.textContent.includes('%');
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                
-                if (isPercentage) {
-                    element.textContent = Math.floor(current) + '%';
-                } else if (target >= 1000) {
-                    element.textContent = (Math.floor(current / 100) / 10).toFixed(1) + 'K+';
-                } else {
-                    element.textContent = Math.floor(current) + '+';
-                }
-            }, 16);
-        };
-
-        // Observe stats section for counter animation
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach(stat => {
-                        const text = stat.textContent;
-                        let target;
-                        
-                        if (text.includes('K+')) {
-                            target = parseFloat(text) * 1000;
-                        } else if (text.includes('%')) {
-                            target = parseInt(text);
-                        } else if (text === '24/7') {
-                            return; // Skip the 24/7 stat
-                        } else {
-                            target = parseInt(text);
-                        }
-                        
-                        stat.textContent = '0';
-                        setTimeout(() => animateCounter(stat, target), 200);
-                    });
-                    
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Header scroll effect
-        let lastScroll = 0;
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.style.padding = '0.5rem 5%';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.15)';
-            } else {
-                header.style.padding = '1rem 5%';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.about-hero');
-            if (hero && scrolled < hero.offsetHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-            });
-        }
-
-        // Add hover effect for story image
-        const storyImage = document.querySelector('.story-image');
-        if (storyImage) {
-            storyImage.addEventListener('mousemove', (e) => {
-                const rect = storyImage.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                
-                storyImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-            });
-            
-            storyImage.addEventListener('mouseleave', () => {
-                storyImage.style.transform = '';
-            });
-        }
-
-        // Add interactive hover effects to value cards
-        document.querySelectorAll('.value-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Initialize animations on page load
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-        });
-    </script>
+</script>
 </body>
+
 </html>

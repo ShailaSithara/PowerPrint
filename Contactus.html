@@ -33,6 +33,7 @@
                     <a href="service.html">Services</a>
                     <ul class="dropdown-menu">
                         <li><a href="flyer.html">Flyer</a></li>
+                        <li><a href="poster.html">Poster</a></li>
                         <li><a href="Brouchure.html">Broucher</a></li>
                         <li><a href="Magazine.html">Magazine</a></li>
                         <li><a href="label.html">Label and Sticker</a></li>
@@ -106,7 +107,7 @@
 
                     <div class="sidebar-features">
                         <div class="sidebar-feature">
-                            <div class="feature-icon">⚡</div>
+                            <!-- <div class="feature-icon">⚡</div> -->
                             <div class="feature-text">
                                 <h4>Fast Response</h4>
                                 <p>We reply within 24 hours</p>
@@ -114,7 +115,7 @@
                         </div>
 
                         <div class="sidebar-feature">
-                            <div class="feature-icon">🎨</div>
+                            <!-- <div class="feature-icon"></div> -->
                             <div class="feature-text">
                                 <h4>Custom Solutions</h4>
                                 <p>Tailored to your needs</p>
@@ -122,7 +123,7 @@
                         </div>
 
                         <div class="sidebar-feature">
-                            <div class="feature-icon">✓</div>
+                            <!-- <div class="feature-icon"></div> -->
                             <div class="feature-text">
                                 <h4>Quality Assured</h4>
                                 <p>Premium printing guaranteed</p>
@@ -272,13 +273,6 @@
     </footer>
 
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  menuToggle.classList.toggle('active');
-});
 
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
@@ -359,6 +353,37 @@ menuToggle.addEventListener('click', () => {
             });
         });
     </script>
+    <script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  }
+
+  // ✅ Mobile navigation fix for "Services"
+  const serviceLink = document.querySelector('.dropdown > a');
+  serviceLink.addEventListener('click', (e) => {
+    if (window.innerWidth <= 991) {
+      e.preventDefault(); // stop default dropdown behavior
+      window.location.href = serviceLink.getAttribute('href'); // navigate to services.html
+    }
+  });
+</script>
+
 </body>
 
 </html>
