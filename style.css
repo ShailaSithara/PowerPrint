@@ -180,37 +180,6 @@ nav {
 }
 
 /* ===================================
-   BREADCRUMB
-=================================== */
-.breadcrumb {
-    padding: 120px 10% 20px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-}
-
-.breadcrumb .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.breadcrumb a {
-    color: #2B4336;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.breadcrumb a:hover {
-    color: #AFCB1F;
-}
-
-.breadcrumb span {
-    color: #777;
-    margin: 0 10px;
-}
-
-/* ===================================
    HERO SECTION - ULTRA ENHANCED
 =================================== */
 .hero {
@@ -2704,6 +2673,63 @@ float:left;
                 padding: 40px 25px;
             }
         }
+
+
+
+
+        /* Hide nav links on mobile by default */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    background: rgb(11, 11, 11);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Optional animation for the active state */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
 
 
 

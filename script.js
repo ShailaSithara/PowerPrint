@@ -234,13 +234,14 @@
         }
       });
     });
- const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.querySelector('.nav-links');
-const dropdown = document.querySelector('.dropdown');
 
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
 });
+
 
 // Toggle services dropdown on mobile
 dropdown.addEventListener('click', (e) => {
