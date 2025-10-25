@@ -913,11 +913,11 @@ nav {
     display: inline-block; /* keep text aligned */
 }
 
-.section-title .highlight-text {
+/* .section-title .highlight-text {
     color: #2ecc71;
     font-weight: 900;
     margin-left: 6px; /* controls space between words */
-}
+/* } */ */
 
 /* Decorative underline */
 .section-title::after {
